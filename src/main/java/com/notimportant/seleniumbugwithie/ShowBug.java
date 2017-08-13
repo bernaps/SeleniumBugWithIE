@@ -32,8 +32,14 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
  *
  *
  * Start IE Web driver version 3.5.0.0 64 Bit (Win7) Download from here
- * http://selenium-release.storage.googleapis.com/index.html IEDriverServer.exe
- * /port=6666
+ * http://selenium-release.storage.googleapis.com/index.html
+ *
+ * IEDriverServer.exe /port=6666
+ *
+ * //Start Maven Build // mvn -Dexec.args="-classpath %classpath
+ * com.notimportant.seleniumbugwithie.ShowBug" -Dexec.executable=java
+ * process-classes org.codehaus.mojo:exec-maven-plugin:1.2.1:exec
+ *
  *
  * @author bguillot
  */
@@ -86,7 +92,8 @@ public class ShowBug {
              * platformName=windows, setWindowRect=true, platform=ANY}]
              */
         } catch (Throwable t) {
-            System.err.println("Error Setting Page timeout for Remote IE Selenium");
+            System.err.println();
+            System.err.println("BUG 2-Error Setting Page timeout for Remote IE Selenium");
             t.printStackTrace(System.err);
         }
         driver = new EventFiringWebDriver(wd);
@@ -101,7 +108,8 @@ public class ShowBug {
             //driver is EventFiringWebDriver with a registered Event Handler (Causing the issue)
             driver.get("http://google.com"); // Fails.
         } catch (Throwable t) {
-            System.err.println("Error with IE Web Driver");
+            System.err.println();
+            System.err.println("MAIN BUG - Error with IE Web Driver");
             t.getMessage();
             t.printStackTrace(System.err);
             /**
