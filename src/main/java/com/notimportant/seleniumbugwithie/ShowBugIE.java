@@ -31,10 +31,10 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
  *
  *
  *
- * Start IE Web driver version 3.5.0.0 64 Bit (Win7) Download from here
+ * Start IE Web driver version 3.5.1.0 64 Bit (Win7) Download from here
  * http://selenium-release.storage.googleapis.com/index.html
  *
- * IEDriverServer.exe /port=6666
+ * IEDriverServer.exe /port=6666 /log-level=TRACE
  *
  * //Start Maven Build // mvn -Dexec.args="-classpath %classpath
  * com.notimportant.seleniumbugwithie.ShowBug" -Dexec.executable=java
